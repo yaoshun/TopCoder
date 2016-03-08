@@ -1,0 +1,82 @@
+Problem Statement
+    
+Hero came up with an interesting way to calculate the value of any string. It works as follows:
+Find all distinct characters that appear in the string.
+For each of those characters, count the number of occurrences.
+Square each of those counts.
+Sum all those squares to get the value of the string.
+For example, suppose Hero has the string "abacaba". This string contains 4 'a's, 2 'b's, and 1 'c'. Thus, its value is 4*4 + 2*2 + 1*1 = 21.
+You are given a string s and an int k. You are allowed to remove at most k characters from s. Your goal is to produce a string with the smallest possible value. Compute and return that value.
+Definition
+    
+Class:
+Istr
+Method:
+count
+Parameters:
+string, int
+Returns:
+int
+Method signature:
+int count(string s, int k)
+(be sure your method is public)
+Limits
+    
+Time limit (s):
+2.000
+Memory limit (MB):
+256
+Stack limit (MB):
+256
+Constraints
+-
+s will contain between 1 and 50 characters, inclusive.
+-
+Each character in s will be a lowercase letter ('a'-'z').
+-
+k will be between 0 and the length of s, inclusive.
+Examples
+0)
+
+    
+"aba"
+1
+Returns: 2
+The optimal strategy is to erase one of the two 'a's. This produces a string with value 1*1 + 1*1 = 2.
+1)
+
+    
+"abacaba"
+0
+Returns: 21
+
+2)
+
+    
+"abacaba"
+1
+Returns: 14
+
+3)
+
+    
+"abacaba"
+3
+Returns: 6
+
+4)
+
+    
+"abc"
+3
+Returns: 0
+
+5)
+
+    
+"wersrsresesrsesrawsdsw"
+11
+Returns: 23
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.
+

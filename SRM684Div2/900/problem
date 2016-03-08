@@ -1,0 +1,90 @@
+Problem Statement
+    
+In this problem, all strings are binary strings. That is, each character of a string is either '0' or '1'.
+A deterministic finite automaton is a machine that processes strings. The automaton has a finite set of possible states. The states are numbered 0 through n-1, where n is the number of states. At any moment the automaton is in one of those states. At the beginning, the automaton is in state 0.
+The automaton processes a string by reading it one character at a time. The automaton has a program (also called a "transition function"): a set of instructions that tell it how to change its state. Each instruction has the form "if you are in state X and you read the character Y, change your state to Z". There is exactly one instruction for each valid combination (X,Y). You are given the description of a specific deterministic finite automaton: vector <int>s z0 and z1 with n elements each. These describe the program of the automaton. For each valid i, the program of the automaton contains the following instructions:
+If you are in state i and you read the character '0', change your state to z0[i].
+If you are in state i and you read the character '1', change your state to z1[i].
+Given the automaton, you ask yourself the following question: Is there an input string that will cause the automaton to visit each of the n states at least once? Return "Exists" (quotes for clarity) if such a string exists, or "Does not exist" if there is no such string.
+Definition
+    
+Class:
+Autohamil
+Method:
+check
+Parameters:
+vector <int>, vector <int>
+Returns:
+string
+Method signature:
+string check(vector <int> z0, vector <int> z1)
+(be sure your method is public)
+Limits
+    
+Time limit (s):
+2.000
+Memory limit (MB):
+256
+Stack limit (MB):
+256
+Constraints
+-
+z0 and z1 will contain exactly n elements.
+-
+n will be between 1 and 50, inclusive.
+-
+Each element in z0 and z1 will be between 0 and n - 1, inclusive.
+Examples
+0)
+
+    
+{0,1}
+{0,1}
+Returns: "Does not exist"
+Regardless of what string you choose, the automaton will remain in state 0 during the entire computation. It will never change its state from 0 to 1.
+1)
+
+    
+{1,1}
+{1,1}
+Returns: "Exists"
+Any non-empty string works.
+2)
+
+    
+{1,2,2}
+{2,2,2}
+Returns: "Exists"
+For example, the string "01" works:
+The automaton begins in state 0.
+The automaton reads the character '0' and changes its state to 1.
+The automaton reads the character '1' and changes its state to 2.
+3)
+
+    
+{2,2,2}
+{2,2,2}
+Returns: "Does not exist"
+
+4)
+
+    
+{1,2,0,3}
+{3,2,0,3}
+Returns: "Exists"
+
+5)
+
+    
+{1,2,0,4,3,5}
+{1,2,3,5,4,5}
+Returns: "Exists"
+
+6)
+
+    
+{1,2,0,4,4,5}
+{1,2,3,5,4,5}
+Returns: "Does not exist"
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.
