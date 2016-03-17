@@ -3,6 +3,11 @@
 #include <unordered_set>
 using namespace std;
 
+// Why it is wrong?
+// The major reason is that when it comes back from a cycle, 
+// there is still a chance to work it out, since we can use another edge
+// to go through all the nodes.
+
 class Autohamil {
 private:
     vector<unordered_set<int>> adj;
