@@ -1,0 +1,79 @@
+
+Problem Statement
+    
+Hero likes some arrays. The arrays he likes are the arrays that have all of the following properties:
+The length of the array is n.
+Each element is an integer between 1 and k, inclusive.
+Whenever A and B are two consecutive elements of the array (in this order), we have (A <= B) or (A mod B != 0).
+For example, suppose n=4 and k=7. Hero will like the array {1,7,7,2} because it has the right length, all elements are in the correct range, 1 <= 7, 7 <= 7, and 7 mod 2 != 0. Hero will not like the array {4,4,4,2}.
+You are given the ints n and k. Let X be the number of different arrays Hero likes. Compute and return the value (X mod 1,000,000,007).
+Definition
+    
+Class:
+DivFree
+Method:
+dfcount
+Parameters:
+int, int
+Returns:
+int
+Method signature:
+int dfcount(int n, int k)
+(be sure your method is public)
+Limits
+    
+Time limit (s):
+2.000
+Memory limit (MB):
+256
+Stack limit (MB):
+256
+Constraints
+-
+n will be between 1 and 50,000, inclusive.
+-
+k will be between 1 and 50,000, inclusive.
+Examples
+0)
+
+    
+2
+2
+Returns: 3
+The three arrays Hero likes are {1,1}, {1,2}, and {2,2}.
+1)
+
+    
+3
+2
+Returns: 4
+The four arrays Hero likes in this case are {1,1,1}, {1,1,2}, {1,2,2}, and {2,2,2}.
+2)
+
+    
+3
+3
+Returns: 15
+
+3)
+
+    
+1
+107
+Returns: 107
+
+4)
+
+    
+5
+6
+Returns: 2292
+
+5)
+
+    
+42
+23
+Returns: 301026516
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.
