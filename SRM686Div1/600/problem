@@ -1,0 +1,71 @@
+
+Problem Statement
+    
+The level-M weight of a permutation P, denoted W(P,M), is computed by finding the number of cycles of P and then taking that number to the M-th power. For example, the level-3 weight of a permutation with 5 cycles is 5^3.
+The total level-M weight of all permutations on N elements, denoted T(N,M), is computed as the sum of W(P,M) over all N! possible permutations P on N elements.
+You are given multiple queries. These are encoded as two vector <int>s n and m with the same number of elements. Return a vector <int> with the same number of elements as n. For each valid i, element i of the return value should be the value T( n[i], m[i] ) modulo 1,000,000,007.
+Definition
+    
+Class:
+CyclesNumber
+Method:
+getExpectation
+Parameters:
+vector <int>, vector <int>
+Returns:
+vector <int>
+Method signature:
+vector <int> getExpectation(vector <int> n, vector <int> m)
+(be sure your method is public)
+Limits
+    
+Time limit (s):
+2.000
+Memory limit (MB):
+256
+Stack limit (MB):
+256
+Notes
+-
+Formally, a permutation on N elements is a bijective function P defined on an N-element set S.
+-
+A cycle of a permutation is a sequence c[0], c[1], ..., c[k-1] of distinct elements of S such that for each i, P(c[i]) = c[(i+1) mod k].
+Constraints
+-
+n and m will contain the same number of elements.
+-
+n will contain between 1 and 300 elements, inclusive.
+-
+Each element of n will be between 1 and 100,000, inclusive.
+-
+Each element of m will be between 0 and 300, inclusive.
+Examples
+0)
+
+    
+{2}
+{2}
+Returns: {5 }
+Here are two permutations: (1, 2) and (2, 1). (1, 2) have 2 cycles. (2, 1) has one cycle. So answer is 1 * 1 + 2 * 2 = 5.
+1)
+
+    
+{3}
+{0}
+Returns: {6 }
+Here answer is just number of permutations, 3! = 6.
+2)
+
+    
+{1, 2, 3}
+{1, 3, 3}
+Returns: {1, 9, 53 }
+Could be more than one query.
+3)
+
+    
+{10, 20, 30}
+{10, 20, 30}
+Returns: {586836447, 544389755, 327675273 }
+Do not forget take answers modulo 1,000,000,007.
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.
