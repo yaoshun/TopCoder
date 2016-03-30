@@ -17,6 +17,7 @@ public:
             conn[i][z1[i]] = true;
         }
 
+        // This is Floyd graph algorithm to find the all-pairs shortest path.
         // O(n^3) complexity to get the connection graph.
         // it works, since we iterates through the connection in the outside.
         // after k = 0, all the connected parts that utilized k now didn't need zero any more.
