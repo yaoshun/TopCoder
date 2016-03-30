@@ -12,3 +12,9 @@ public:
     int functionName(vector<int> table) {
     }
 };
+
+int main() {
+    ClassName test;
+    // For vector we can directly use {1,2,3,4,5}
+    cout << test.functionName({1,2,3,4,5}) << endl;
+}
