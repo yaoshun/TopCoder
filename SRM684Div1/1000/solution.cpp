@@ -39,9 +39,16 @@ public:
 
         ll ret = 0;
         for (int last = 0; last < n; last++) {
+            // In fact a 2D dp here.
+            // dp[n][m] is the actual dimension, here it implements as 1D.
             vector<ll> dp(m + 1, 0);
+
+            // If the array only has one number. 
+            // the result is a[last]!, no denominator exist since it 
+            // start with partialsum[2].
             dp[a[last] - 1] = fact[a[last]];
 
+            // Then we gradually add the remaining numbers to the data.
             int cursum = a[last] - 1;
             for (int i = 0; i < n; i++) {
                 if (last == i) continue;
