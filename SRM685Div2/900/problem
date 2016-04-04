@@ -1,0 +1,92 @@
+
+Problem Statement
+    
+You are given a simple undirected graph with n nodes, labeled 0 through n-1. Each edge of this graph is red, green, or blue. You are given a description of the graph in a vector <string> G. For each pair of nodes (i, j) there are four possibilities:
+G[i][j] = 'R', meaning that i and j are connected by a red edge.
+G[i][j] = 'G', meaning that i and j are connected by a green edge.
+G[i][j] = 'B', meaning that i and j are connected by a blue edge.
+G[i][j] = '.', meaning that i and j are not connected by an edge.
+ A spanning tree of our graph is any set S of exactly k = n-1 edges such that it is possible to travel from any node to any other node by only using edges from S. Does our graph have a spanning tree that has exactly k/3 edges of each color (red, green, blue)? If it does, return "Exists". Otherwise, return "Does not exist".
+Definition
+    
+Class:
+RGBTree
+Method:
+exist
+Parameters:
+vector <string>
+Returns:
+string
+Method signature:
+string exist(vector <string> G)
+(be sure your method is public)
+Limits
+    
+Time limit (s):
+2.000
+Memory limit (MB):
+256
+Stack limit (MB):
+256
+Constraints
+-
+n will be between 4 and 13, inclusive.
+-
+n mod 3 will be 1.
+-
+G will contain exactly n elements.
+-
+Each element in G will contain exactly n characters.
+-
+Each character in G will be one of {'.', 'R', 'G', 'B'}.
+-
+For each i, G[i][i] = '.'.
+-
+For each i and j, G[i][j] = G[j][i].
+Examples
+0)
+
+    
+{".RGB",
+ "R...",
+ "G...",
+ "B..."}
+Returns: "Exist"
+This graph has exactly three edges: one red, one green, and one blue. These three edges form the desired spanning tree.
+1)
+
+    
+{".RRB",
+ "R...",
+ "R...",
+ "B..."}
+Returns: "Does not exist"
+This graph does also have a spanning tree. Its only spanning tree contains the edges (0,1), (0,2), and (0,3). However, this spanning tree contains two red and no green edges. Thus, a spanning tree with the desired property does not exist.
+2)
+
+    
+{".R..BG..G..RG","R...GG..BR.G.","...G.GG.RR.BB","..G.RR.B..GRB","BG.R.G.BRRR.G","GGGRG.R....RR","..G..R.BGRR..","...BB.B.RB.G.","GBR.R.GR.B.R.",".RR.R.RBB.BRB","...GR.R..B...","RGBR.R.GRR...","G.BBGR...B..."}
+Returns: "Exist"
+
+3)
+
+    
+{".............",".......BB.R..",".......RR....",".....G.G....R","........BB...","...G.........","........B...R",".BRG.......G.",".BR.B.B...GB.","....B......GR",".R......G....",".......GBG..B","...R..R..R.B."}
+Returns: "Does not exist"
+
+4)
+
+    
+{"..B.BB...RB..","......R..B.G.","B.......BB...",".......R...G.","B....GRB..R..","B...G.RG.R...",".R..RR..B.RB.","...RBG...G...","..B...B......","RBB..R.G....R","B...R.R......",".G.G..B.....R",".........R.R."}
+Returns: "Exist"
+
+5)
+
+    
+{"....",
+ "....",
+ "....",
+ "...."}
+Returns: "Does not exist"
+This graph has no spanning trees at all.
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.
