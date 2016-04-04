@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <cmath>
+#include <cstring> // for memset
 #include <unordered_set>
 #include <queue>
 #include <stack>
@@ -72,7 +73,7 @@ public:
         if (f[(1<<n) - 1][k][k][k]) {
             return "Exist";
         } else {
-            return "Doest not exist";
+            return "Does not exist";
         }
     }
 };
