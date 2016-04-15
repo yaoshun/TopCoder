@@ -1,0 +1,91 @@
+
+Problem Statement
+    
+Correct parentheses sequences can be defined recursively as follows:
+The empty string "" is a correct sequence.
+If "X" and "Y" are correct sequences, then "XY" (the concatenation of X and Y) is a correct sequence.
+If "X" is a correct sequence, then "(X)" is a correct sequence.
+Each correct parentheses sequence can be derived using the above rules.
+Examples of correct parentheses sequences include "", "()", "()()()", "(()())", and "(((())))".   You are given a string s. You are also given vector <int>s L and R, each with the same number of elements. These encode a set of conditions. For each valid i, you have to satisfy the following condition: the substring of s that begins at the 0-based index L[i] and ends at the 0-based index R[i] must be a correct parentheses sequence.   You can only modify s in one way: in each step you can choose two characters of s and swap them. Return the minimal number of swaps needed to produce a string that satisfies all the given conditions. If it is impossible, return -1 instead.
+Definition
+    
+Class:
+ParenthesesDiv1Medium
+Method:
+minSwaps
+Parameters:
+string, vector <int>, vector <int>
+Returns:
+int
+Method signature:
+int minSwaps(string s, vector <int> L, vector <int> R)
+(be sure your method is public)
+Limits
+    
+Time limit (s):
+2.000
+Memory limit (MB):
+256
+Stack limit (MB):
+256
+Constraints
+-
+s will contain between 1 and 2,000 characters, inclusive.
+-
+Each character in s will be '(' or ')'.
+-
+L will contain between 1 and 2,000 elements, inclusive.
+-
+L and R will contain the same number of elements.
+-
+For each valid i, 0 <= L[i] <= R[i] < |s|.
+Examples
+0)
+
+    
+")("
+{0,0,0,0}
+{1,1,1,1}
+Returns: 1
+We have four identical conditions. Each of them tells us that the substring that begins at index 0 and ends at index 1 must be a correct parentheses sequence. We can satisfy all conditions by swapping s[0] with s[1]. This swap produces the string "()".
+1)
+
+    
+"(())"
+{0,2}
+{1,3}
+Returns: 1
+The only way to satisfy both conditions is to change s into "()()". This can be done in 1 swap: by swapping s[1] with s[2].
+2)
+
+    
+"(((())"
+{0,2}
+{1,3}
+Returns: 2
+This time we do swap(s[1],s[4]) and swap(s[3],s[5]).
+3)
+
+    
+"((((((((("
+{0,2}
+{1,3}
+Returns: -1
+
+4)
+
+    
+"()()()()"
+{0,0,0,0,2,2,2,4,4,6}
+{1,3,5,7,3,5,7,5,7,7}
+Returns: 0
+
+5)
+
+    
+")()(()()((())()()()()()()))(()())()()()("
+{3,5,17,25,35}
+{12,10,30,30,38}
+Returns: 3
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.

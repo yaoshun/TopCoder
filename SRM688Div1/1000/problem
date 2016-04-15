@@ -1,0 +1,87 @@
+
+Problem Statement
+    
+Correct parentheses sequences can be defined recursively as follows:
+The empty string "" is a correct sequence.
+If "X" and "Y" are correct sequences, then "XY" (the concatenation of X and Y) is a correct sequence.
+If "X" is a correct sequence, then "(X)" is a correct sequence.
+Each correct parentheses sequence can be derived using the above rules.
+Examples of correct parentheses sequences include "", "()", "()()()", "(()())", and "(((())))".   We can define the depth and the cost of a correct parentheses sequence recursively as follows:
+The empty string "" has depth 0 and cost 0.
+Suppose that "S" = "(A)", where A is a correct parentheses sequence. Then we have depth(S) = depth(A)+1 and cost(S) = cost(A) + depth(S)^2.
+Suppose that "S" = "AB", where A and B are correct parentheses sequences. Then we have depth(S) = max(depth(A),depth(B)) and cost(S) = cost(A) + cost(B).
+For example:
+The depth of "(((())))" is 4, the depth of "()()()" is 1, and the depth of "(())()" is 2.
+The cost of "(((())))" is 4^2 + 3^2 + 2^2 + 1^2 = 30, the cost of "()()()" is 1^2 + 1^2 + 1^2 = 3, and the cost of "(())()" is 6.
+Note that the depth and the cost of each correct parentheses sequence is uniquely defined using the above rules. For example, when evaluating the depth and cost of "()()()" it does not matter whether we take X = "()" and Y = "()()" or we take X = "()()" and Y = "()", the results will be the same in both cases.   You are given a string s. You are going to split s into two disjoint subsequences s1 and s2. (Each character of s must be used in exactly one of s1 and s2, and the original order of characters must be preserved in the new sequences.)   Your primary goal is to make sure that both s1 and s2 are correct parentheses sequences. If this goal cannot be achieved, return -1.   Your secondary goal is to make cost(s1) + cost(s2) as small as possible. Compute and return the smallest possible value of cost(s1) + cost(s2).
+Definition
+    
+Class:
+ParenthesesDiv1Hard
+Method:
+minCost
+Parameters:
+string
+Returns:
+int
+Method signature:
+int minCost(string s)
+(be sure your method is public)
+Limits
+    
+Time limit (s):
+4.000
+Memory limit (MB):
+256
+Stack limit (MB):
+256
+Notes
+-
+Pay attention to the unusual time limit.
+Constraints
+-
+s will contain between 1 and 150 elements, inclusive.
+-
+Each character in s will be '(' or ')'.
+Examples
+0)
+
+    
+"(())"
+Returns: 2
+The optimal solution is to split s into s1 = s2 = "()". (For example, s1 will be the characters at indices 0 and 2 and s2 will be the characters at indices 1 and 3.) For this split we have cost(s1) = cost(s2) = 1.
+1)
+
+    
+"((())())(()()())"
+Returns: 11
+One optimal solution is:
+s  = ((())())(()()())
+s1 =   () ()  ()()() 
+s2 = ((  )  )(      )
+Cost(s1) = 5, Cost(s2) = 6.
+2)
+
+    
+"())(()"
+Returns: -1
+This s cannot be split into two correct sequences.
+3)
+
+    
+"(((((((((())))))))))"
+Returns: 110
+
+4)
+
+    
+"()"
+Returns: 1
+
+5)
+
+    
+"(((())()()()((((()))))(((())))()()()))(()(()))"
+Returns: 69
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.
