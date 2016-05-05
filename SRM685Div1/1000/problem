@@ -1,0 +1,83 @@
+
+Problem Statement
+    
+Here's one traditional graph theory task:  You are given a simple undirected graph G with n nodes. Please count the number of spanning trees, and return that number modulo 1,000,000,007.  The above task can be solved in O(n^3) time by using Kirchhoff's matrix tree theorem (https://en.wikipedia.org/wiki/Kirchhoff%27s_theorem).  This task is the inverse of the above task. You are given the output for the above problem: an int r. Your task is to construct any valid input that produces this output. More precisely, you have to construct a graph G with the following properties:
+G is undirected.
+G is simple. (Each pair of vertices is connected by at most one edge. There are no self-loops.)
+The number of nodes in G is between 1 and 300, inclusive.
+The number of edges in G is between 0 and 1000, inclusive.
+(S modulo 1,000,000,007) = r, where S is the total number of spanning trees of G.
+Construct any such graph G. Label its vertices 0 through n-1. Then, return a vector <int> with the description of your G. This vector <int> should have m+1 elements, where m is the number of edges in G. Element 0 of the return value should be n: the number of nodes. Each of the other elements encodes one edge of G: if G contains an edge (i,j), the return value should contain the number (i*n + j).  You may assume that each valid test case has a solution. If there are multiple solutions, you may return any of them.
+Definition
+    
+Class:
+InverseMatrixTree
+Method:
+constructGraph
+Parameters:
+int
+Returns:
+vector <int>
+Method signature:
+vector <int> constructGraph(int r)
+(be sure your method is public)
+Limits
+    
+Time limit (s):
+2.000
+Memory limit (MB):
+256
+Stack limit (MB):
+256
+Constraints
+-
+r will be between 0 and 1,000,000,006, inclusive.
+Examples
+0)
+
+    
+3
+Returns: {3, 1, 2, 5 }
+As n=3, the numbers {1, 2, 5} encode the edges (0,1), (0,2), and (1,2). These edges form a cycle of length 3. This graph does indeed have exactly 3 spanning trees.
+1)
+
+    
+1
+Returns: {1 }
+Any tree will be a valid answer.
+2)
+
+    
+100000000
+Returns: 
+{10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19, 23, 24,
+ 25, 26, 27, 28, 29, 34, 35, 36, 37, 38, 39, 45, 46, 47, 48, 49, 56, 57,
+ 58, 59, 67, 68, 69, 78, 79, 89 }
+The output is a complete graph with 10 nodes, we know it has 10^8 spanning trees by Cayley's formula.
+3)
+
+    
+73741817
+Returns: 
+{46, 1, 2, 139, 140, 142, 143, 280, 281, 283, 284, 421, 422, 424, 425,
+ 562, 563, 565, 566, 703, 704, 706, 707, 844, 845, 847, 848, 985, 986,
+ 988, 989, 1126, 1127, 1129, 1130, 1267, 1268, 1270, 1271, 1408, 1409,
+ 1411, 1412, 1549, 1550, 1552, 1553, 1690, 1691, 1693, 1694, 1831, 1832,
+ 1834, 1835, 1972, 1973, 1975, 1976, 2113, 2114 }
+The output looks like this: 
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+It has 4^15 = 1073741824 spanning trees. Note that 1073741824 % 1000000007 = 73741817, so it is a correct answer.
+4)
+
+    
+360
+Returns: {8, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 47, 53 }
+
+5)
+
+    
+0
+Returns: {2 }
+Any graph that is not connected is a valid answer.
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.
